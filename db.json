@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Smartphone X5"
+    },
+    {
+      "id": "2",
+      "title": "Notebook Gamer"
+    },
+    {
+      "id": "3",
+      "title": "Fone de Ouvido"
+    },
+    {
+      "id": "4",
+      "title": "Tablet Android"
+    },
+    {
+      "id": "5",
+      "title": "Relógio Inteligente"
+    },
+    {
+      "id": "6",
+      "title": "Câmera Digital"
+    },
+    {
+      "id": "7",
+      "title": "Impressora Laser"
+    },
+    {
+      "id": "8",
+      "title": "Scanner de Documentos"
+    },
+    {
+      "id": "9",
+      "title": "Teclado Mecânico"
+    },
+    {
+      "id": "10",
+      "title": "Mouse Óptico"
+    },
+    {
+      "id": "11",
+      "title": "Headset para Jogos"
+    },
+    {
+      "id": "12",
+      "title": "Monitor de 24 Polegadas"
+    },
+    {
+      "id": "13",
+      "title": "Placa-Mãe"
+    },
+    {
+      "id": "14",
+      "title": "Memória RAM 16GB"
+    },
+    {
+      "id": "15",
+      "title": "SSD 1TB"
+    },
+    {
+      "id": "16",
+      "title": "Fonte de Alimentação 650W"
+    },
+    {
+      "id": "17",
+      "title": "Gabinete para PC"
+    },
+    {
+      "id": "18",
+      "title": "Cadeira Ergonômica"
+    },
+    {
+      "id": "19",
+      "title": "Mesa para Computador"
+    },
+    {
+      "id": "20",
+      "title": "Webcam Full HD"
+    },
+    {
+      "id": "21",
+      "title": "Microfone USB"
+    },
+    {
+      "id": "22",
+      "title": "Alto-Falante Bluetooth"
+    },
+    {
+      "id": "23",
+      "title": "Carregador Portátil"
+    },
+    {
+      "id": "24",
+      "title": "Protetor de Tela"
+    },
+    {
+      "id": "25",
+      "title": "Estojo para Notebook"
+    },
+    {
+      "id": "26",
+      "title": "Suporte para Tablet"
+    },
+    {
+      "id": "27",
+      "title": "Cabo HDMI 2.0"
+    },
+    {
+      "id": "28",
+      "title": "Adaptador de Corrente"
+    },
+    {
+      "id": "29",
+      "title": "Filtro de Linha"
+    },
+    {
+      "id": "30",
+      "title": "Estabilizador de Tensão"
+    }
+  ]
+}

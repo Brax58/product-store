@@ -1,11 +1,10 @@
-import { ProductPayload } from './../../../shared/interfaces/payload-product.interface.ts.service';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ProductsService } from '../../../shared/services/products.service'
+import { ProductService } from '../../../shared/services/product.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +16,7 @@ import { Router } from '@angular/router';
 })
 
 export class CreateProductComponent {
-  productService = inject(ProductsService);
+  productService = inject(ProductService);
   matSnackBar = inject(MatSnackBar);
   router = inject(Router);
 
@@ -29,7 +28,7 @@ export class CreateProductComponent {
       })
   });
 
-  onSubimit() {
+  onSubmit() {
     this.productService.post({
       title: this.form.controls.title.value
     }).subscribe(() => {

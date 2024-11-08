@@ -1,0 +1,12 @@
+.container form{
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  width: 100%;
+  padding: 16px;
+}
+
+.container form button{
+  background-color: #f48f0f;
+  width: 100%;
+}

@@ -1,13 +1,13 @@
+import { Product } from '../interfaces/product.interface';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Product } from '../interfaces/product.interface';
 import { ProductPayload } from '../interfaces/payload-product.interface.ts.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class ProductsService {
+export class ProductService {
   httpClient = inject(HttpClient);
 
   getAll() {
@@ -16,5 +16,13 @@ export class ProductsService {
 
   post(payload: ProductPayload){
     return this.httpClient.post("/api/products",payload);
+  }
+
+  put(id:string, payload: ProductPayload){
+    return this.httpClient.put(`/api/products/${id}`,payload);
+  }
+
+  getById(id:string){
+    return this.httpClient.get<Product>(`/api/products/${id}`);
   }
 }

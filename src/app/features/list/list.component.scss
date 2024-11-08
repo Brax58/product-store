@@ -3,3 +3,12 @@
   justify-content: flex-end;
   padding: 16px 0px;
 }
+
+.container-card{
+  display: flex;
+  flex-direction: column;
+}
+
+.container-card app-card{
+  padding: 8px;
+}

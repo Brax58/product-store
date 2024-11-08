@@ -1,1 +1,9 @@
-<p>create-product works!</p>
+<div class="container">
+  <form [formGroup]="form" class="form" (ngSubmit)="onSubimit()">
+    <mat-form-field>
+      <mat-label>Write the title</mat-label>
+      <input type="text" matInput formControlName="title">
+    </mat-form-field>
+    <button type="submit">Add</button>
+  </form>
+</div>

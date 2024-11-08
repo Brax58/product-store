@@ -9,6 +9,6 @@ export const routes: Routes = [
   },
   {
     path: 'create-product',
-    component: CreateProductComponent
+    loadComponent: () => import('./features/forms/create-product/create-product.component').then(m => m.CreateProductComponent)
   }
 ];

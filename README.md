@@ -1,27 +1,12 @@
-# ProductStore
+Este projeto consiste em uma aplicação web frontend desenvolvida com Angular e TypeScript, focada na criação e gerenciamento de uma listagem de produtos. Abaixo está uma visão geral do que foi realizado no projeto:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Configuração do Ambiente: Configuração do NodeJS com NVM para controle de versões.
+Estruturação do Projeto: Criação de um novo projeto Angular, junto com componentes essenciais como o Header e a estrutura de layout da aplicação utilizando Sass.
+Criação de Componentes: Criação de componentes específicos para listar, cadastrar, editar e excluir produtos. Componentes reutilizáveis, como o Card de produto, foram desenvolvidos para melhorar a modularidade.
+Backend Simulado: Configuração de um JSON Server para simular um backend, possibilitando a manipulação dos dados de produtos.
+Formulários Reativos: Utilização de Reactive Forms para criar formulários de cadastro e edição de produtos com validações e feedback para o usuário.
+Navegação e Feedback ao Usuário: Implementação de navegação para criar produtos e feedback através do Mat Snackbar após cada cadastro ou atualização.
+Aprimoramento e Refatoração de Código: Refatoração para padronizar a configuração de componentes e melhorar o layout, além do uso de técnicas avançadas como Signals, Resolvers e Smart Functions.
+Ações de Exclusão de Produto: Implementação de um diálogo de confirmação antes de deletar produtos, com comunicação direta ao JSON Server.
+Melhorias no Desempenho e UX: Uso do Defer Block para carregar componentes sob demanda e otimização da estilização da listagem.
+Finalização e Organização: Configuração final do projeto, melhorias na usabilidade e agradecimentos ao concluir o desenvolvimento.

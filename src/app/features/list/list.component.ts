@@ -1,41 +1,13 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProductService } from '../../shared/services/product.service';
 import { Product } from '../../shared/interfaces/product.interface';
 import { CardComponent } from './components/card/card.component';
 import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { filter } from 'rxjs';
-
-@Component({
-  selector: 'app-confirmation-dialog',
-  template: `
-    <mat-dialog-content class="mat-typography">
-      <h2 mat-dialog-title>Are you sure you want to delete this product?</h2>
-    </mat-dialog-content>
-
-    <mat-dialog-actions align="end">
-      <button mat-raised-button (click)="onYes()">Yes</button>
-      <button mat-button (click)="onNo()">No</button>
-    </mat-dialog-actions>
-  `,
-  standalone: true,
-  imports: [MatDialogModule, MatButtonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-
-export class ConfirmationDialogComponent {
-  readonly dialogRef = inject(MatDialogRef);
-
-  onNo() {
-    this.dialogRef.close(false);
-  }
-
-  onYes() {
-    this.dialogRef.close(true);
-  }
-}
+import { ConfirmationDialogService } from '../../shared/services/confirmation-dialog.service';
 
 @Component({
   selector: 'app-list',
@@ -48,10 +20,10 @@ export class ConfirmationDialogComponent {
 export class ListComponent {
   products: Product[] = [];
 
-  readonly productService = inject(ProductService);
-  readonly router = inject(Router);
-  readonly matSnackBar = inject(MatSnackBar);
-  readonly dialog = inject(MatDialog);
+  protected readonly productService = inject(ProductService);
+  protected readonly router = inject(Router);
+  protected readonly matSnackBar = inject(MatSnackBar);
+  protected readonly dialog = inject(ConfirmationDialogService);
 
   ngOnInit() {
     this.productService.getAll().subscribe((products) => {
@@ -67,11 +39,8 @@ export class ListComponent {
     const removeProduct = true;
 
     this.dialog
-      .open(ConfirmationDialogComponent)
-      .afterClosed()
-      .pipe(
-        filter((answer) => answer === removeProduct)
-      )
+      .openDialog()
+      .pipe(filter((answer) => answer === removeProduct))
       .subscribe(() => {
         this.productService.delete(id).subscribe(() => {
           this.matSnackBar.open('Product Deleted successfully!', 'Ok')

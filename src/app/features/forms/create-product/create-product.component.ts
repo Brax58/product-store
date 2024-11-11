@@ -4,11 +4,12 @@ import { ProductService } from '../../../shared/services/product.service'
 import { Router } from '@angular/router';
 import { FormComponent } from '../../../shared/components/form/form.component';
 import { ProductPayload } from '../../../shared/interfaces/payload-product.interface.ts.service';
+import { BackToListComponent } from '../../../shared/components/back-to-list/back-to-list.component';
 
 @Component({
   selector: 'app-create-product',
   standalone: true,
-  imports: [FormComponent],
+  imports: [FormComponent,BackToListComponent],
   templateUrl: './create-product.component.html',
   styleUrl: './create-product.component.scss'
 })

@@ -4,11 +4,12 @@ import { Component, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormComponent } from '../../../shared/components/form/form.component';
+import { BackToListComponent } from '../../../shared/components/back-to-list/back-to-list.component';
 
 @Component({
   selector: 'app-edit-product',
   standalone: true,
-  imports: [FormComponent],
+  imports: [FormComponent,BackToListComponent],
   templateUrl: './edit-product.component.html',
   styleUrl: './edit-product.component.scss'
 })

@@ -1,0 +1,9 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Write the title</mat-label>
+      <input type="text" matInput formControlName="title">
+    </mat-form-field>
+    <button type="submit" mat-flat-button>Save</button>
+  </form>
+</div>

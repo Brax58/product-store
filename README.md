@@ -18,7 +18,7 @@ O **Product Store** é uma aplicação frontend para gerenciamento de produtos, 
 - **Feedback ao Usuário**: Utilização do Mat Snackbar para exibir mensagens ao usuário após ações (cadastro, edição, exclusão).
 - **Carregamento sob Demanda**: Utilização do Defer Block para otimizar o carregamento de componentes.
 
-##Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - Angular: Framework principal para desenvolvimento frontend.
 - TypeScript: Linguagem para garantir tipagem e segurança de código.
 - Angular Material: Biblioteca de componentes para estilização.

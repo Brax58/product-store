@@ -17,8 +17,13 @@ export class CardComponent {
   productTitle = computed(() => this.product().title);
 
   @Output() editProduct = new EventEmitter();
+  @Output() deleteProduct = new EventEmitter();
 
   onEdit(){
     this.editProduct.emit();
+  };
+
+  onDelete(){
+    this.deleteProduct.emit();
   };
 }

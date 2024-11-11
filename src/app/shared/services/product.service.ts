@@ -25,4 +25,8 @@ export class ProductService {
   getById(id:string){
     return this.httpClient.get<Product>(`/api/products/${id}`);
   }
+
+  delete(id:string){
+    return this.httpClient.delete(`/api/products/${id}`);
+  }
 }

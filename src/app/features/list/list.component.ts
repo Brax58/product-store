@@ -2,23 +2,25 @@ import { Component, inject, signal } from '@angular/core';
 import { ProductService } from '../../shared/services/product.service';
 import { Product } from '../../shared/interfaces/product.interface';
 import { CardComponent } from './components/card/card.component';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
 import { filter } from 'rxjs';
 import { ConfirmationDialogService } from '../../shared/services/confirmation-dialog.service';
+import { NoItemsComponent } from './components/no-items/no-items.component';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent, RouterLink, MatButtonModule],
+  imports: [CardComponent, RouterLink, MatButtonModule,NoItemsComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
 
 export class ListComponent {
-  products = signal<Product[]>(inject(ActivatedRoute).snapshot.data['products']);
+  products = signal<Product[]>(
+    inject(ActivatedRoute).snapshot.data['products']
+  );
 
   protected readonly productService = inject(ProductService);
   protected readonly router = inject(Router);

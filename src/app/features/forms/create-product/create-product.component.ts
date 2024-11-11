@@ -14,9 +14,9 @@ import { ProductPayload } from '../../../shared/interfaces/payload-product.inter
 })
 
 export class CreateProductComponent {
-  productService = inject(ProductService);
-  matSnackBar = inject(MatSnackBar);
-  router = inject(Router);
+  protected readonly productService = inject(ProductService);
+  protected readonly matSnackBar = inject(MatSnackBar);
+  protected readonly router = inject(Router);
 
   onSubmit(product: ProductPayload) {
     this.productService.post(product).subscribe(() => {

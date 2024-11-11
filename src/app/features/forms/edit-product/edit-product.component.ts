@@ -15,9 +15,9 @@ import { FormComponent } from '../../../shared/components/form/form.component';
 
 export class EditProductComponent {
 
-  productService = inject(ProductService);
-  matSnackBar = inject(MatSnackBar);
-  router = inject(Router);
+  protected readonly productService = inject(ProductService);
+  protected readonly matSnackBar = inject(MatSnackBar);
+  protected readonly router = inject(Router);
 
   product: Product = inject(ActivatedRoute).snapshot.data['product'];
 

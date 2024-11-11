@@ -8,7 +8,7 @@ import { ProductPayload } from '../interfaces/payload-product.interface.ts.servi
 })
 
 export class ProductService {
-  httpClient = inject(HttpClient);
+  protected readonly httpClient = inject(HttpClient);
 
   getAll() {
     return this.httpClient.get<Product[]>('/api/products');

@@ -4,11 +4,8 @@
   padding: 16px 0px;
 }
 
-.container-card{
-  display: flex;
-  flex-direction: column;
+.item-container{
+  display: block;
+  margin-bottom: 16px;
 }
 
-.container-card app-card{
-  padding: 8px;
-}

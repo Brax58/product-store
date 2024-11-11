@@ -2,21 +2,17 @@
   <a mat-flat-button [routerLink]="['/create-product']">Create Product</a>
 </div>
 
-<div class="container-card">
-
-  @for (product of products(); track product.id) {
-
-  @defer (on immediate) {
-  <app-card app-card [product]="product" (deleteProduct)="onDelete(product.id)"
-    (editProduct)="onEdit(product.id)"></app-card>
-  }
-
-  }
-
-  @empty {
+@for (product of products(); track product.id) {
+  <div class="item-container">
     @defer (on immediate) {
-      <app-no-items></app-no-items>
+      <app-card [product]="product" (deleteProduct)="onDelete(product.id)" (editProduct)="onEdit(product.id)"></app-card>
     }
-  }
+  </div>
 
-</div>
+}
+
+@empty {
+  @defer (on immediate) {
+    <app-no-items></app-no-items>
+  }
+}

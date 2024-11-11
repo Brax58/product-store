@@ -1,8 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ProductService } from '../../shared/services/product.service';
 import { Product } from '../../shared/interfaces/product.interface';
 import { CardComponent } from './components/card/card.component';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,18 +18,12 @@ import { ConfirmationDialogService } from '../../shared/services/confirmation-di
 })
 
 export class ListComponent {
-  products: Product[] = [];
+  products = signal<Product[]>(inject(ActivatedRoute).snapshot.data['products']);
 
   protected readonly productService = inject(ProductService);
   protected readonly router = inject(Router);
   protected readonly matSnackBar = inject(MatSnackBar);
   protected readonly dialog = inject(ConfirmationDialogService);
-
-  ngOnInit() {
-    this.productService.getAll().subscribe((products) => {
-      this.products = products
-    });
-  }
 
   onEdit(id: string) {
     this.router.navigateByUrl(`/edit-product/${id}`);
@@ -45,7 +39,10 @@ export class ListComponent {
         this.productService.delete(id).subscribe(() => {
           this.matSnackBar.open('Product Deleted successfully!', 'Ok')
 
-          this.ngOnInit();
+          this.productService.getAll().subscribe((products) => {
+            this.products.set(products);
+          });
+
         });
       }
       )

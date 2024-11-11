@@ -3,7 +3,7 @@
 </div>
 
 <div class="container-card">
-  @for (product of products; track product.id) {
+  @for (product of products(); track product.id) {
     <app-card [product]="product" (deleteProduct)="onDelete(product.id)"  (editProduct)="onEdit(product.id)"></app-card>
   }
 </div>

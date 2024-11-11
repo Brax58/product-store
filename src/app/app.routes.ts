@@ -6,6 +6,13 @@ import { ProductService } from './shared/services/product.service';
 export const routes: Routes = [
   {
     path: '',
+    resolve: {
+      products: () => {
+        const productService = inject(ProductService);
+
+        return productService.getAll();
+      }
+    },
     component: ListComponent
   },
   {
